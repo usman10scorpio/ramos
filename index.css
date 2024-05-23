@@ -7,7 +7,6 @@ body {
   margin: 0;
   padding: 0 !important;
   font-family: "Montserrat";
-  counter-reset: count;
 }
 
 body * {
@@ -78,7 +77,7 @@ body * {
   position: absolute;
 }
 #heading #laptop-view {
-  width: 45rem;
+  width: 42rem;
 }
 
 #analytics {
@@ -252,6 +251,79 @@ body * {
   content: counter(count);
   animation: counter 1s linear forwards;
   animation-fill-mode: forwards;
+  counter-reset: count;
+}
+#cards #black {
+  background-color: #0d0d0d;
+  border-radius: 3rem;
+  flex: 1;
+  margin-left: 2rem;
+  color: white;
+  padding: 3rem 1rem 3rem 3rem;
+}
+#cards #black-container {
+  display: flex;
+  justify-content: center;
+}
+#cards #black-left {
+  text-align: center;
+  border: 0.3rem solid #1a1818;
+  padding: 2rem;
+  border-radius: 3rem;
+  margin-right: 2rem;
+  width: 10rem;
+}
+#cards #black-left span {
+  margin-bottom: 3rem;
+  display: block;
+}
+#cards #black-left .fa {
+  font-size: 4rem;
+  color: #e0ce29;
+}
+#cards #black-right {
+  border: 0.3rem solid #1a1818;
+  padding: 2rem;
+  border-radius: 3rem;
+  width: 10rem;
+}
+#cards #black-right--heading {
+  font-size: 1.4rem;
+  margin-bottom: 6rem;
+}
+#cards #black-right--percentage {
+  font-size: 3.5rem;
+}
+#cards #black-right--percentage .fa {
+  background-color: white;
+  color: #45c781;
+  border-radius: 50%;
+}
+#cards #black-right--percentage span {
+  position: absolute;
+  font-size: 1rem;
+  color: #45c781;
+  font-weight: bold;
+}
+#cards #black-right--percentage::before {
+  font-size: 3.5rem !important;
+  font: 500 2.5rem system-ui;
+  content: counter(count);
+  animation: counter 1s linear forwards;
+  animation-fill-mode: forwards;
+  counter-reset: count;
+}
+#cards #black-profile {
+  display: flex;
+}
+#cards #black-profile img {
+  width: 5em;
+  height: 5em;
+  border-radius: 50%;
+  border: 0.3rem solid black;
+}
+#cards #black-profile img:nth-of-type(2) {
+  margin-left: -1rem;
 }
 
 @keyframes slideUp {
