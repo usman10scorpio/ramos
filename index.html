@@ -6,12 +6,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link href="https://fonts.googleapis.com/css?family=Bellota:400,700|Open+Sans:400,600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700;800&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/font-awesome-4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="index.css">
   <title>Dribble</title>
 </head>
 <body>
     <div id="home">
+
+        <div id="header">
+            <h3>ramos</h3>
+            <div id="navigation">
+                <a href="" class="href">Dashboard</a>
+                <a href="" class="href">Reports</a>
+                <a href="" class="href">Documents</a>
+                <a href="" class="href">History</a>
+                <a href="" class="href">Settings</a>
+            </div>
+            <button id="signup"><span>Sign Up</span></button>
+        </div>
+        
+        <div id="heading">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img id="heading-limages" src="./images/one.png" alt="" srcset="">Analytics <br>that 
+            <div id="laptop">
+                <img id="laptop-play" src="./images/three.png" alt="" srcset="">    
+                <img id="laptop-view" src="./images/four.png" alt="" srcset="">    
+            </div>
+            <span>helps</span> you <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shape <img id="heading-bimages" src="./images/two.png" alt="" srcset="">the future</div>
+     
+        <div id="analytics">
+            
+            <div id="analytics-heading">
+                <div id="left-heading">Your Key to strategic<br> success through analytics</div>
+                <div id="right-heading">Reach for exciting, instantanous,<br> all-accessible insights in real-time?</div>
+            </div>
+
+            <div id="cards">
+                <div id="white">
+                    
+                    <div id="white-left">
+                        <div id="white-button">Setting up reports</div>
+                        <div id="white-text">Fast and easy access <br> to analytics</div>
+                        <p>One platform is a comprehensive<br> system of solutions that will be the<br> first step towards digitalization of<br> your business!</h3>
+                    </div>
+                    
+                    <div id="white-right">
+                        <h3 id="white-right--heading">Sales statistic</h3>
+                        
+                        <div id="white-stats">
+                           
+                            <div id="white-stats--left">
+                               
+                                <img src="./images/five.png" alt="" srcset="">
+                               
+                            </div> 
+
+                            <div id="white-stats--profit">
+                                    <h2>Total Profit</h2>
+                                    <h1><span>$ </span>264,2K</h1>
+                            </div>
+
+                            <div id="white-stats--right">
+                                <div id="white-stats--visitors">Visitors</div>
+
+                                <div id="white-stats--progress">
+                                    <div class="white-stats--progress-bar white-stats--progress-bar-animation"></div>
+                                </div>
+                                
+                                <div id="white-stats--percentage">56K <span><i class="fa fa-arrow-up" aria-hidden="true"></i> +14%</span></div>
+                            </div> 
+                        </div>
+
+                        <div id="white-stats--bottom">
+
+                            <h3>Visit Statistics</h3>
+                              
+                            <div id="white-stats--graph">
+                                <canvas id="myLineChart" style="width: 100%;"></canvas>
+                            </div>
+                            
+                            <div id="rate">
+                                <div id="rate-heading">Rate</div>
+                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                <div id="rate-sheading">+</div>
+                            </div>
+                        </div>   
+
+                    </div>
+                </div>
+                <div id="black"></div>
+            </div>
+            <div id="bottom">
+                <div>Upto</div>
+                <div>45%</div>
+                <div>Increase your analytics efficiency by upto 45%. Unique <br> algroithms provide insights from data, reduce time for analysis <br>and save time for making important informed decisions</div>
+            </div>
+        </div>
+
+        <div id="demo"></div>
+        <div id="insights"></div>
+        <div id="headingsecond"></div>
+        <div id="indicators"></div>
+        <div id="getstarted"></div>
+        <div id="footer"></div>
     </div>
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    var ctx = document.getElementById('myLineChart').getContext('2d');
+    var myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May','',''],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [300,600,1200,2000,5000,5400,6000,4500],
+                fill: false,
+                fill: false,
+                    borderColor: '#fed026', // Line color
+                    pointRadius: 6, // Size of points
+                    pointHoverRadius: 8, // Size of points when hovered
+                    pointBorderColor: '#fed026', // Border color of points
+                    pointBackgroundColor: '#fed026', // Fill color of points
+                tension: 0.1
+            }]
+        },
+        options: {
+            plugins: {
+                    legend: {
+                        display: false // This hides the legend
+                    }
+                },
+                scales: {
+                    x: {
+                grid: {
+                    display: false // Hides the x-axis grid lines
+                },
+                border: {
+                    display: false // Hides the x-axis line
+                }
+            },
+            y: {
+                display: false, // Hides the y-axis
+                grid: {
+                    display: false // Hides the y-axis grid lines
+                },
+                border: {
+                    display: false // Hides the y-axis line
+                }
+            }
+        }
+        }
+    });
+</script>
 
 </html>
