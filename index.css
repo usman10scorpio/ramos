@@ -84,6 +84,10 @@ body * {
   background-color: #f9f9f9;
   padding: 10rem;
   border-radius: 5rem;
+  opacity: 0;
+  transform: translateY(5rem);
+  transition: opacity 3s ease-out, transform 3s ease-out;
+  animation: slideUp 2s forwards;
 }
 #analytics-heading {
   display: flex;
@@ -98,9 +102,13 @@ body * {
 #analytics #right-heading {
   font-size: 1.4rem;
 }
+#analytics * {
+  animation: slideUp 2s forwards;
+}
 
 #cards {
   display: flex;
+  margin-bottom: 5rem;
 }
 #cards #white {
   display: flex;
@@ -182,7 +190,7 @@ body * {
 }
 #cards #white-right #white-stats--percentage span {
   position: absolute;
-  right: 5rem;
+  right: 3rem;
   font-size: 1rem;
   color: #45c781;
   font-weight: bold;
@@ -191,6 +199,12 @@ body * {
   background-color: #45c781;
   color: white;
   border-radius: 50%;
+}
+#cards #white-right #white-stats--percentage::before {
+  content: counter(count);
+  animation: counterStats 3s linear forwards;
+  animation-fill-mode: forwards;
+  counter-reset: count;
 }
 #cards #white-right #white-stats--progress {
   width: 100%;
@@ -249,7 +263,7 @@ body * {
 #cards #white-right #white-stats--bottom #rate-sheading::after {
   font: 500 2.5rem system-ui;
   content: counter(count);
-  animation: counter 1s linear forwards;
+  animation: counter 3s linear forwards;
   animation-fill-mode: forwards;
   counter-reset: count;
 }
@@ -264,6 +278,17 @@ body * {
 #cards #black-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 2rem;
+}
+#cards #black-container--widget {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+#cards #black-container--report {
+  font-size: 1.4rem;
+  text-align: center;
+  color: #abacac;
 }
 #cards #black-left {
   text-align: center;
@@ -293,6 +318,7 @@ body * {
 }
 #cards #black-right--percentage {
   font-size: 3.5rem;
+  animation: unset;
 }
 #cards #black-right--percentage .fa {
   background-color: white;
@@ -309,7 +335,7 @@ body * {
   font-size: 3.5rem !important;
   font: 500 2.5rem system-ui;
   content: counter(count);
-  animation: counter 1s linear forwards;
+  animation: counter 3s linear forwards;
   animation-fill-mode: forwards;
   counter-reset: count;
 }
@@ -326,6 +352,31 @@ body * {
   margin-left: -1rem;
 }
 
+#analytics.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+}
+#bottom div:nth-of-type(1) {
+  font-size: 3rem;
+  margin-right: 2rem;
+}
+#bottom div:nth-of-type(2) {
+  font-size: 8rem;
+  font-weight: 500;
+  margin-right: 2rem;
+}
+#bottom div:nth-of-type(3) {
+  font-size: 1.4rem;
+  align-self: center;
+}
+
 @keyframes slideUp {
   from {
     transform: translateY(100%);
@@ -340,23 +391,106 @@ body * {
   0% {
     counter-increment: count 0;
   }
+  5% {
+    counter-increment: count 5;
+  }
   10% {
     counter-increment: count 10;
+  }
+  15% {
+    counter-increment: count 15;
   }
   20% {
     counter-increment: count 20;
   }
+  25% {
+    counter-increment: count 25;
+  }
   30% {
     counter-increment: count 30;
+  }
+  35% {
+    counter-increment: count 35;
   }
   40% {
     counter-increment: count 40;
   }
+  45% {
+    counter-increment: count 45;
+  }
   50% {
     counter-increment: count 50;
   }
+  55% {
+    counter-increment: count 55;
+  }
   60% {
     counter-increment: count 60;
+  }
+  65% {
+    counter-increment: count 65;
+  }
+  70% {
+    counter-increment: count 66;
+  }
+  70% {
+    counter-increment: count 67;
+  }
+  80% {
+    counter-increment: count 68;
+  }
+  90% {
+    counter-increment: count 69;
+  }
+  100% {
+    counter-increment: count 70;
+  }
+}
+@keyframes counterStats {
+  0% {
+    counter-increment: count 0;
+  }
+  5% {
+    counter-increment: count 5;
+  }
+  10% {
+    counter-increment: count 10;
+  }
+  15% {
+    counter-increment: count 15;
+  }
+  20% {
+    counter-increment: count 20;
+  }
+  25% {
+    counter-increment: count 25;
+  }
+  30% {
+    counter-increment: count 30;
+  }
+  35% {
+    counter-increment: count 35;
+  }
+  40% {
+    counter-increment: count 40;
+  }
+  45% {
+    counter-increment: count 45;
+  }
+  50% {
+    counter-increment: count 50;
+  }
+  55% {
+    counter-increment: count 55;
+  }
+  60% {
+    counter-increment: count 60;
+  }
+  65% {
+    counter-increment: count 65;
+  }
+  70% {
+    counter-increment: count 66;
   }
   70% {
     counter-increment: count 67;

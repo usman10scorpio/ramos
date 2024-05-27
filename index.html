@@ -72,7 +72,7 @@
                                     <div class="white-stats--progress-bar white-stats--progress-bar-animation"></div>
                                 </div>
                                 
-                                <div id="white-stats--percentage">56K <span><i class="fa fa-arrow-up" aria-hidden="true"></i> +14%</span></div>
+                                <div id="white-stats--percentage">K <span><i class="fa fa-arrow-up" aria-hidden="true"></i> +14%</span></div>
                             </div> 
                         </div>
 
@@ -112,12 +112,12 @@
                         </div>
                     </div>
 
-                    <div>Widget Control</div>
-                    <div>Reports provide a comprehensive overview <br>of important aspects of web analytics</div>
+                    <div id="black-container--widget">Widget Control</div>
+                    <div id="black-container--report">Reports provide a comprehensive overview <br>of important aspects of web analytics</div>
                 </div>
             </div>
             <div id="bottom">
-                <div>Upto</div>
+                <div>Up to</div>
                 <div>45%</div>
                 <div>Increase your analytics efficiency by upto 45%. Unique <br> algroithms provide insights from data, reduce time for analysis <br>and save time for making important informed decisions</div>
             </div>
@@ -181,5 +181,22 @@
         }
     });
 </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const section = document.getElementById('analytics');
+  
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // Stop observing once the section is visible
+          }
+        });
+      });
+  
+      observer.observe(section);
+    });
+  </script>
 
 </html>
