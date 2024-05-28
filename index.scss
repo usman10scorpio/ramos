@@ -97,11 +97,6 @@ html {
     padding: 10rem;
     border-radius: 5rem;
   
-    opacity: 0;
-    transform: translateY(5rem);
-    transition: opacity 3s ease-out, transform 3s ease-out;
-    animation: slideUp 2s forwards;
-  
     &-heading {
       display: flex;
       justify-content: space-between;
@@ -416,11 +411,6 @@ html {
     }
   }
   
-  #analytics.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
   #bottom {
     display: flex;
     flex-direction: row;
@@ -443,6 +433,147 @@ html {
       align-self: center;
     }
   }
+
+  #footer {
+
+    padding: 9rem 3rem 9rem 3rem;
+    background-color: #0d0d0d;
+
+    &-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+
+        opacity: 0; 
+        animation: slideUp 1s ease-in-out forwards;
+    }
+
+    #navigation {
+
+
+        a {
+            color: #abacac;
+            font-size: 1.5rem;
+            text-decoration: unset;
+            margin-right: 2rem;
+            
+            animation-delay: 3s;
+        }
+
+    }
+
+    #hello {
+        font-size: 4.5rem;
+        color: white;
+
+        animation-delay: 3s;
+    }
+
+    hr {
+        border-color: rgb(171 172 172 / 50%);
+    }
+
+    &-content {
+        display: flex;
+        margin-top: 3rem;
+        align-items: baseline;
+        
+        opacity: 0; 
+        animation: slideUp 1s ease-in-out forwards;
+
+        &--left {
+            font-size: 1.4rem;
+            margin-right: 8rem;
+            animation-delay: 3s;
+
+        }
+
+        &--first {
+            color: white;
+            margin-bottom: 1rem;
+            animation-delay: 3s;
+        }
+
+        &--second {
+            color:  #abacac;
+            line-height: 2.4rem;
+            animation-delay: 3s;
+        }
+
+        &--center {
+            font-size: 1.4rem;
+            animation-delay: 3s;
+        }
+
+        &--cfirst {
+            color: white;
+            margin-bottom: 1rem;
+            animation-delay: 3s;
+        }
+
+        &--csecond {
+            color:  #abacac;
+            line-height: 2.4rem;
+            animation-delay: 3s;
+        }
+
+        &--right {
+            color:  #abacac;
+            font-size: 2rem;
+            margin-left: auto;
+            animation-delay: 3s;
+        }
+
+        &--social {
+            line-height: 5rem;
+            animation-delay: 3s;
+        }
+
+
+    }
+
+    &-bottom {
+
+        display: flex;
+        margin-top: 4rem;
+        opacity: 0; 
+        animation: slideUp 1s ease-in-out forwards;
+
+        &--left {
+            width: 40rem;
+            animation-delay: 3s;
+        }
+
+        &--right {
+            width: 10rem;
+            border-radius: 3rem;
+            animation-delay: 3s;
+        }
+
+        &--center {
+            color: #abacac;
+            display: flex;
+            font-size: 1.4rem;
+            flex: 0 1 65%;
+            justify-content: space-evenly;
+            align-items: center;
+
+            animation-delay: 3s;
+        }
+    }
+  }
+
+  #header, #heading, #analytics, #footer {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(5rem); /* Initially translated */
+    transition: transform 3s ease-in-out, opacity 3s ease-in-out;
+}
+
+#header.slide-up, #heading.slide-up, #analytics.slide-up, #footer.slide-up {
+    transform: translateY(0);
+    opacity: 1;
+}
   
   @keyframes slideUp {
     from {
@@ -573,13 +704,5 @@ html {
     100% {
       counter-increment: count 70;
     }
-  }
-  
-  // media queries
-  
-  @media only screen and (max-width: 363px) {
-  }
-  
-  @media only screen and (max-width: 375px) {
   }
   

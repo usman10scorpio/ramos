@@ -123,12 +123,59 @@
             </div>
         </div>
 
-        <div id="demo"></div>
+        <!-- <div id="demo"></div>
         <div id="insights"></div>
         <div id="headingsecond"></div>
         <div id="indicators"></div>
-        <div id="getstarted"></div>
-        <div id="footer"></div>
+        <div id="getstarted"></div> -->
+        <div id="footer">
+            
+            <div id="footer-head">
+            
+                <div id="navigation">
+                    <a href="" class="href">About</a>
+                    <a href="" class="href">Why Us</a>
+                    <a href="" class="href">Platform</a>
+                    <a href="" class="href">Pricing</a>
+                    <a href="" class="href">Contacts</a>
+                </div>
+            
+                <div id="hello">hello@ramos.com</div>
+            
+            </div>
+
+            <hr>
+
+
+            <div id="footer-content">
+                
+                <div id="footer-content--left">
+                    <div id="footer-content--first">Wareensville Heights</div>
+                    <div id="footer-content--second">14418 Vineyard Drive. NC <br> 44218</div>
+                </div>
+
+                <div id="footer-content--center">
+                    <div id="footer-content--first">Saint Luis</div>
+                    <div id="footer-content--second">1366 Penn Street <br> 63101</div>
+                </div>
+
+                <div id="footer-content--right">
+                    <div id="footer-content--social">Linkedin <br> Instagram <br> Facebook</div>
+                </div>
+            </div>
+
+            <div id="footer-bottom">
+                
+                <img src="./images/nine.png" id="footer-bottom--left">
+
+                <div id="footer-bottom--center">
+                    <div id="footer-bottom--first">Privacy Policy</div>
+                    <div id="footer-bottom--second">License Agreement</div>
+                </div>
+
+                <img src="./images/eight.png" id="footer-bottom--right">
+            </div>
+        </div>
     </div>
 </body>
 
@@ -183,20 +230,26 @@
 </script>
 
 <script>
+
     document.addEventListener('DOMContentLoaded', () => {
-      const section = document.getElementById('analytics');
-  
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target); // Stop observing once the section is visible
-          }
+        const sections = document.querySelectorAll('#header, #heading, #analytics, #footer');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                    observer.unobserve(entry.target); // Unobserve the element after it has animated
+                }
+            });
+        }, {
+            threshold: 0.1 // Adjust the threshold as needed
         });
-      });
-  
-      observer.observe(section);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     });
-  </script>
+
+</script>
 
 </html>
